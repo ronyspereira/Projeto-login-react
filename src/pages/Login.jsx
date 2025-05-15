@@ -9,9 +9,9 @@ import { Button } from 'primereact/button';
 const Login = () => {
     return (
         <>
-            <div className='bg-red flex h-screen align-items-center justify-content-center' >
+            <div className='flex h-screen align-items-center justify-content-center px-3'  style={{backgroundColor: 'var(--primary-500)'}}>
 
-                <form className='surface-0 p-3 border-round-md'>
+                <form className='col-12 md:col-3 p-3 border-round-md' style={{backgroundColor:'#ffffff'}}>
                     <h3 className='text-center text-4xl'>Sejam bem-vindos!</h3>
                     <label htmlFor="email" className='block uppercase font-bold text-sm mb-1'>Email</label>
                     <InputText
