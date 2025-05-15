@@ -3,10 +3,14 @@ import { InputText } from 'primereact/inputtext';
 import { IconField } from 'primereact/iconfield';
 import { InputIcon } from 'primereact/inputicon';
 import { Button } from 'primereact/button';
+import { useState } from 'react';
 
 
 
 const Login = () => {
+
+    const [mostrarSenha, setMostrarSenha] = useState (false);
+
     return (
         <>
             <div className='flex h-screen align-items-center justify-content-center px-3'  style={{backgroundColor: 'var(--primary-500)'}}>
@@ -21,9 +25,11 @@ const Login = () => {
                     <label htmlFor="senha" className='block uppercase font-bold text-sm mb-1'>Senha</label>
                     <div className='mb-3 '>
                         <IconField>
-                            <InputIcon className="pi pi-eye"> </InputIcon>
+                            <InputIcon className={`pi ${mostrarSenha ? 'pi-eye' : 'pi-eye-slash'} cursor-pointer`} 
+                            onClick={() => setMostrarSenha(!mostrarSenha)}> </InputIcon>
                             <InputText
                                 id='senha'
+                                type={ mostrarSenha ? 'text': 'password'}
                                 placeholder='digite sua senha' className='w-full' />
                         </IconField>
 
